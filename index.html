@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>es6-spa-seed</title>
+    <script src="/js/jspm_packages/system.js"></script>
+    <script src="/js/config.js"></script>
+    <!--<script src="/js/dist/app-built.js"></script>-->
+  </head>
+  <body>
+    <h1>es6-spa-seed</h1>
+
+    <script>
+      System.import('src/app').then(function(app){
+        window.app = app.default();
+      });
+    </script>
+  </body>
+</html>

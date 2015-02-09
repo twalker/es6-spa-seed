@@ -1,0 +1,35 @@
+{
+  "name": "es6-spa-seed",
+  "version": "0.0.1",
+  "description": "A seed project to gallivant with ES6 and distinguished microlibraries",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "bundle": "jspm bundle src/app public/js/dist/app-built.js"
+  },
+  "homepage": "https://github.com/twalker/es6-spa-seed",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/twalker/es6-spa-seed.git"
+  },
+  "keywords": [
+    "es6",
+    "seed"
+  ],
+  "author": "twalker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/twalker/es6-spa-seed/issues"
+  },
+  "devDependencies": {
+    "6to5": "^3.4.1",
+    "jspm": "^0.11.5"
+  },
+  "dependencies": {},
+  "jspm": {
+    "directories": {
+      "baseURL": "public/js",
+      "lib": "public/js/src"
+    }
+  }
+}
