@@ -4,8 +4,13 @@
   "description": "A seed project to gallivant with ES6 and distinguished microlibraries",
   "main": "server.js",
   "scripts": {
+    "postinstall": "jspm install",
     "start": "node server.js",
-    "bundle": "jspm bundle src/app public/js/dist/app-built.js"
+    "build": "npm run bundle && npm run build:css",
+    "bundle": "jspm bundle src/app public/dist/js/app-built.js",
+    "build:css": "stylus public/css/style.styl --include node_modules/nib/lib --out public/dist/css",
+    "watch:js": "watch 'npm run bundle' public/js/src",
+    "watch:css": "watch 'npm run build:css' public/css"
   },
   "homepage": "https://github.com/twalker/es6-spa-seed",
   "repository": {
@@ -23,7 +28,10 @@
   },
   "devDependencies": {
     "6to5": "^3.4.1",
-    "jspm": "^0.11.5"
+    "jspm": "^0.11.5",
+    "nib": "^1.1.0",
+    "stylus": "^0.50.0",
+    "watch": "^0.13.0"
   },
   "dependencies": {},
   "jspm": {
