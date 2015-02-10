@@ -3,7 +3,7 @@ System.config({
   "transpiler": "6to5",
   "paths": {
     "*": "*.js",
-    "es6-spa-seed/*": "src/*.js"
+    "es6-spa-seed/*": "app/*.js"
   }
 });
 

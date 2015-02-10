@@ -8,7 +8,6 @@ export default function(){
         document.removeEventListener('DOMContentLoaded', onReady, true);
         window.removeEventListener('load', onReady, true);
       }
-
       document.addEventListener('DOMContentLoaded', onReady, true);
       window.addEventListener('load', onReady, true);
     }

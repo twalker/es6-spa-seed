@@ -7,10 +7,11 @@
     "postinstall": "jspm install",
     "start": "node server.js",
     "build": "npm run bundle && npm run build:css",
-    "bundle": "jspm bundle src/app public/dist/js/app-built.js",
+    "bundle": "jspm bundle app/main public/dist/js/app-built.js",
     "build:css": "stylus public/css/style.styl --include node_modules/nib/lib --out public/dist/css",
-    "watch:js": "watch 'npm run bundle' public/js/src",
-    "watch:css": "watch 'npm run build:css' public/css"
+    "watch:js": "watch 'npm run bundle' public/js/app",
+    "watch:css": "watch 'npm run build:css' public/css",
+    "build:watch": "parallelshell 'npm run watch:js' 'npm run watch:css'"
   },
   "homepage": "https://github.com/twalker/es6-spa-seed",
   "repository": {
@@ -30,6 +31,7 @@
     "6to5": "^3.4.1",
     "jspm": "^0.11.5",
     "nib": "^1.1.0",
+    "parallelshell": "^1.0.4",
     "stylus": "^0.50.0",
     "watch": "^0.13.0"
   },
@@ -37,7 +39,7 @@
   "jspm": {
     "directories": {
       "baseURL": "public/js",
-      "lib": "public/js/src"
+      "lib": "public/js/app"
     }
   }
 }
