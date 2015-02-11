@@ -6,12 +6,15 @@
   "scripts": {
     "postinstall": "jspm install",
     "start": "node server.js",
-    "build": "npm run bundle && npm run build:css",
+    "build": "npm run bundle -s && npm run build:css -s",
     "bundle": "jspm bundle app/main public/dist/js/app-built.js",
     "build:css": "stylus public/css/style.styl --include node_modules/nib/lib --out public/dist/css",
-    "watch:js": "watch 'npm run bundle' public/js/app",
-    "watch:css": "watch 'npm run build:css' public/css",
-    "build:watch": "parallelshell 'npm run watch:js' 'npm run watch:css'"
+    "watch:js": "watch 'npm run bundle -s' public/js/app",
+    "watch:css": "watch 'npm run build:css -s' public/css",
+    "build:watch": "parallelshell 'npm run watch:js -s' 'npm run watch:css -s'",
+    "lint": "jshint --reporter node_modules/jshint-stylish/stylish.js public/js/src/ public/js/test/",
+    "livereload": "livereload public/dist/",
+    "dev": "parallelshell \"npm run livereload -s\" \"npm run watch:js -s\" \"npm run watch:css -s\""
   },
   "homepage": "https://github.com/twalker/es6-spa-seed",
   "repository": {
@@ -28,18 +31,26 @@
     "url": "https://github.com/twalker/es6-spa-seed/issues"
   },
   "devDependencies": {
-    "6to5": "^3.4.1",
-    "jspm": "^0.11.5",
+    "6to5": "^3.5.3",
+    "jspm": "^0.13.1",
+    "jshint": "^2.6.0",
+    "jshint-stylish": "^1.0.0",
+    "livereload": "^0.3.6",
     "nib": "^1.1.0",
     "parallelshell": "^1.0.4",
     "stylus": "^0.50.0",
     "watch": "^0.13.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.11.2"
+  },
   "jspm": {
     "directories": {
       "baseURL": "public/js",
       "lib": "public/js/app"
+    },
+    "dependencies": {
+      "express": "^4.11.2"
     }
   }
 }
