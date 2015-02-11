@@ -12,7 +12,7 @@
     "watch:js": "watch 'npm run bundle -s' public/js/app",
     "watch:css": "watch 'npm run build:css -s' public/css",
     "build:watch": "parallelshell 'npm run watch:js -s' 'npm run watch:css -s'",
-    "lint": "jshint --reporter node_modules/jshint-stylish/stylish.js public/js/src/ public/js/test/",
+    "lint": "jshint --reporter node_modules/jshint-stylish/stylish.js public/js/app/",
     "livereload": "livereload public/dist/",
     "dev": "parallelshell \"npm run livereload -s\" \"npm run watch:js -s\" \"npm run watch:css -s\""
   },

@@ -10,6 +10,8 @@ export default function(){
       }
       document.addEventListener('DOMContentLoaded', onReady, true);
       window.addEventListener('load', onReady, true);
+      document.addEventListener('error', reject, true);
+      window.addEventListener('error', reject, true);
     }
   });
 }
