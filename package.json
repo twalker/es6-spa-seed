@@ -48,9 +48,6 @@
     "directories": {
       "baseURL": "public/js",
       "lib": "public/js/app"
-    },
-    "dependencies": {
-      "express": "^4.11.2"
     }
   }
 }
