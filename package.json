@@ -8,14 +8,14 @@
     "start": "node server.js",
     "build": "npm run bundle -s && npm run build:css -s",
     "bundle": "jspm bundle app/main public/dist/js/app-built.js",
-    "build:css": "stylus public/css/style.styl --include node_modules/nib/lib --out public/dist/css",
+    "build:css": "stylus public/css/style.styl -m --include node_modules/nib/lib --out public/dist/css",
     "watch:js": "watch 'npm run bundle -s' public/js/app",
     "watch:css": "watch 'npm run build:css -s' public/css",
     "build:watch": "parallelshell 'npm run watch:js -s' 'npm run watch:css -s'",
     "lint": "jshint --reporter node_modules/jshint-stylish/stylish.js public/js/app/",
     "livereload": "livereload public/dist/",
     "clean": "rimraf public/js/jspm_packages public/dist/**/*",
-    "dev": "parallelshell \"npm run livereload -s\" \"npm run watch:js -s\" \"npm run watch:css -s\""
+    "dev": "parallelshell 'npm start -s' 'npm run livereload -s' 'npm run watch:js -s' 'npm run watch:css -s'"
   },
   "homepage": "https://github.com/twalker/es6-spa-seed",
   "repository": {
@@ -50,6 +50,7 @@
     "directories": {
       "baseURL": "public/js",
       "lib": "public/js/app"
-    }
+    },
+    "dependencies": {}
   }
 }
