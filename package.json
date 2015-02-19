@@ -1,6 +1,6 @@
 {
   "name": "es6-spa-seed",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A seed project to gallivant with ES6 and distinguished microlibraries",
   "main": "server.js",
   "scripts": {
@@ -32,8 +32,8 @@
     "url": "https://github.com/twalker/es6-spa-seed/issues"
   },
   "devDependencies": {
-    "6to5": "^3.5.3",
-    "jspm": "^0.13.1",
+    "babel": "^4.3.0",
+    "jspm": "^0.14.0",
     "jshint": "^2.6.0",
     "jshint-stylish": "^1.0.0",
     "livereload": "^0.3.6",
@@ -41,7 +41,7 @@
     "parallelshell": "^1.0.4",
     "rimraf": "^2.2.8",
     "stylus": "^0.50.0",
-    "watch": "^0.13.0"
+    "watch": "^0.14.0"
   },
   "dependencies": {
     "express": "^4.11.2"
@@ -50,7 +50,6 @@
     "directories": {
       "baseURL": "public/js",
       "lib": "public/js/app"
-    },
-    "dependencies": {}
+    }
   }
 }
