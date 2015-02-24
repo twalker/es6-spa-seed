@@ -9,3 +9,9 @@ System.config({
   }
 });
 
+System.config({
+  "map": {
+    "whatwg-fetch": "npm:whatwg-fetch@0.7.0"
+  }
+});
+
